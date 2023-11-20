@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/live_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <xyz.doikki.videoplayer.player.VideoView
+        android:id="@+id/mVideoView"
+        android:layout_width="976dp"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/tvLeftChannnelListLayout"
+        android:layout_width="421mm"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="-421mm"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <com.owen.tvrecyclerview.widget.TvRecyclerView
+            android:id="@+id/mGroupGridView"
+            android:layout_width="180mm"
+            android:layout_height="match_parent"
+            android:background="@color/color_66000000"
+            android:paddingLeft="5mm"
+            android:paddingTop="10mm"
+            android:paddingRight="5mm"
+            android:paddingBottom="10mm"
+            android:visibility="visible"
+            app:tv_selectedItemIsCentered="true"
+            app:tv_verticalSpacingWithMargins="10mm" />
+
+        <View
+            android:layout_width="1mm"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/color_FFFFFF" />
+
+        <com.owen.tvrecyclerview.widget.TvRecyclerView
+            android:id="@+id/mChannelGridView"
+            android:layout_width="240mm"
+            android:layout_height="match_parent"
+            android:background="@color/color_66000000"
+            android:paddingLeft="5mm"
+            android:paddingTop="10mm"
+            android:paddingRight="5mm"
+            android:paddingBottom="10mm"
+            android:visibility="visible"
+            app:tv_selectedItemIsCentered="true"
+            app:tv_verticalSpacingWithMargins="10mm" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tvRightSettingLayout"
+        android:layout_width="361mm"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_marginRight="-361mm"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="180mm"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.owen.tvrecyclerview.widget.TvRecyclerView
+                android:id="@+id/mSettingItemView"
+                android:layout_width="180mm"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:background="@color/color_66000000"
+                android:gravity="center"
+                android:paddingLeft="5mm"
+                android:paddingTop="10mm"
+                android:paddingRight="5mm"
+                android:paddingBottom="10mm"
+                android:visibility="visible"
+                app:tv_selectedItemIsCentered="true"
+                app:tv_verticalSpacingWithMargins="10mm" />
+
+            <TextView
+                android:id="@+id/tvSeekBack"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:focusable="true"
+                android:layout_weight="1"
+                android:textColor="@color/color_CCFFFFFF"
+                android:gravity="center"
+                android:background="@drawable/shape_user_focus"
+                android:text="回退 10s" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="1mm"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/color_FFFFFF" />
+
+        <LinearLayout
+            android:layout_width="180mm"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.owen.tvrecyclerview.widget.TvRecyclerView
+                android:id="@+id/mSettingGroupView"
+                android:layout_width="180mm"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:background="@color/color_66000000"
+                android:gravity="center"
+                android:paddingLeft="5mm"
+                android:paddingTop="10mm"
+                android:paddingRight="5mm"
+                android:paddingBottom="10mm"
+                android:visibility="visible"
+                app:tv_selectedItemIsCentered="true"
+                app:tv_verticalSpacingWithMargins="10mm" />
+
+            <TextView
+                android:id="@+id/tvSeekJump"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:textColor="@color/color_CCFFFFFF"
+                android:gravity="center"
+                android:background="@drawable/shape_user_focus"
+                android:text="快进 10s" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvChannel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="30mm"
+        android:layout_marginRight="60mm"
+        android:background="@drawable/shape_live_channel_num"
+        android:gravity="center"
+        android:paddingTop="5mm"
+        android:paddingBottom="5mm"
+        android:textColor="@android:color/white"
+        android:textSize="36mm"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="5mm"
+        android:layout_marginRight="5mm"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="22mm"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvNetSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="5mm"
+        android:layout_marginBottom="5mm"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="22mm"
+        android:visibility="gone" />
+</FrameLayout>

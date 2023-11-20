@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/vs_440"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_dialog_bg_main"
+        android:paddingHorizontal="12dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:focusable="false"
+            android:lineSpacingExtra="@dimen/ts_40"
+            android:lineSpacingMultiplier="0"
+            android:padding="@dimen/vs_20"
+            android:singleLine="true"
+            android:text="检查到新版本"
+            android:textColor="@color/color_CC000000"
+            android:textSize="@dimen/ts_26"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="检查到新版本" />
+
+        <TextView
+            android:id="@+id/tvNewVersionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:focusable="false"
+            android:textColor="@color/color_CC000000"
+            android:textSize="@dimen/ts_22"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            tools:text="新版本：" />
+
+        <TextView
+            android:id="@+id/tvCurrentVersionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:focusable="false"
+            android:textColor="@color/color_CC000000"
+            android:textSize="@dimen/ts_22"
+            app:layout_constraintStart_toStartOf="@id/tvNewVersionName"
+            app:layout_constraintTop_toBottomOf="@id/tvNewVersionName"
+            tools:text="当前版本：" />
+
+        <TextView
+            android:id="@+id/tvUpdataInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:focusable="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="@dimen/dp_10"
+            android:textColor="@color/color_CC000000"
+            android:textSize="@dimen/ts_22"
+            app:layout_constraintStart_toStartOf="@id/tvCurrentVersionName"
+            app:layout_constraintTop_toBottomOf="@id/tvCurrentVersionName"
+            tools:text="更新内容：" />
+
+
+        <com.daimajia.numberprogressbar.NumberProgressBar
+            android:id="@+id/tipsProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/linearLayout"
+            app:layout_constraintStart_toStartOf="@id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@id/tvUpdataInfo"
+            app:progress_current="0"
+            app:progress_max="100"
+            app:progress_reached_bar_height="4dp"
+            app:progress_reached_color="#3498DB"
+            app:progress_text_color="#3498DB"
+            app:progress_text_offset="2dp"
+            app:progress_text_size="15sp"
+            app:progress_unreached_bar_height="4dp"
+            app:progress_unreached_color="@android:color/holo_green_dark" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tipsProgress">
+
+            <TextView
+                android:id="@+id/tvCancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_common_cancel_btn"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="下次提示"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/ts_20" />
+
+            <TextView
+                android:id="@+id/tvConfirm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_common_check_btn"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="立即更新"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/ts_20" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

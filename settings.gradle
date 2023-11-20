@@ -1,0 +1,3 @@
+rootProject.name = "小猫TV"
+include ':app'
+include ':player'
