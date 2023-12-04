@@ -7,7 +7,7 @@
 
     <xyz.doikki.videoplayer.player.VideoView
         android:id="@+id/mVideoView"
-        android:layout_width="976dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <LinearLayout
